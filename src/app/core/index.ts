@@ -5,9 +5,10 @@ import { CheckoutActions } from './../checkout/actions/checkout.actions';
 import { CheckoutService } from './services/checkout.service';
 import { NgModule } from '@angular/core';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
-import { NgProgressModule } from '@ngx-progressbar/core';
+// import { NgProgressModule } from '@ngx-progressbar/core';
 import { HttpClientModule } from '@angular/common/http';
-import { NgProgressHttpModule } from '@ngx-progressbar/http';
+// import { NgProgressHttpModule } from '@ngx-progressbar/http';
+import { NgProgressModule } from 'ngx-progressbar';
 // Components
 
 // Services
@@ -48,10 +49,11 @@ import { ResponseInterceptor } from './interceptors/reponse.interceptor';
       UserEffects
     ]),
     HttpClientModule,
-    NgProgressModule.forRoot({
-      meteor: false
-    }),
-    NgProgressHttpModule.forRoot()
+    NgProgressModule,
+    // NgProgressModule.forRoot({
+    //   meteor: false
+    // }),
+    // NgProgressHttpModule.forRoot()
   ],
   providers: [
     VariantParserService,
